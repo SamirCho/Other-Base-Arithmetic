@@ -1,4 +1,7 @@
 function toDecimal(base,num){
+    if(num<0){
+        return -toDecimal(base,-num)
+    }
     let value=0
     num=num.toString()
     for (let i = 1; i <= num.length; i++) {
@@ -11,11 +14,14 @@ function toNumerical(x){
     if(!isNaN(x)){
         return x
     }else{
-        return 10+x.charCodeAt(0)-(x===x.toLowerCase()?96:64)
+        return x.charCodeAt(0)-55
     }
 }
 
 function fromDecimal(base,num){
+    if(num<0){
+        return -fromDecimal(base,-num)
+    }
     let arr=[]
     while(num>=base){
         if(num%base<10){
@@ -45,5 +51,3 @@ function transpose(arr){
     }
     return newArr.join("")
 }
-
-console.log(fromDecimal(29,18043364))
