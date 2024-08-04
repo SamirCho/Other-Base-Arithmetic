@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Base Arithmetic</title>
+    <script defer src="script.js"></script>
+    <script defer src="base.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <h1>Other Base Arithmetic</h1>
+    <br>
+    <br>
+    <div>
+    base: (2 to 36)
+    <input type="text" id="base" value="2">
+    <br>
+    <br>
+    <input type="text" id="input1" value="1">  <button id="btn">+</button> <input type="text" id="input2" value="11">
+    <br>
+    <br>
+      <div class="dropdown" id="dropdown">
+        <a onclick="drop('+')">+</a>
+        <a onclick="drop('-')">-</a>
+        <a onclick="drop('×')">×</a>
+        <a onclick="drop('÷')">÷</a>
+        <a onclick="drop('^')">^</a>
+      </div>
+    <div id="container">1 + 11 = 100 in base 2</div>
+    <br>
+    <button onclick="display()">Sumbit</button>
+    </div>
+</body>
+</html>
