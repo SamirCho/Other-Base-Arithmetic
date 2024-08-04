@@ -22,16 +22,21 @@ function display(){
 
 function calculate(base,input1,input2){
   base=toNumerical(base)
+  if(!isNaN(base)){
+    base=Number(base)
+  }
   if(base!=Math.floor(base)||base<2||base>35){
     return "Invalid Base"
   }
   if(!isNaN(input1)){
+    input1=Number(input1)
     if(input1!=Math.floor(input1)){
       return "Please only use integers"
     }
   }
   if(!isNaN(input2)){
-    if(input2!=Math.floor(input2)){
+    input2=Number(input2)
+    if(input2!=Math.floor(input2)||badRatio(input1)||badRatio(input2)){
       return "Please only use integers"
     }
   }
@@ -86,6 +91,15 @@ function lowercase(input1,input2){
       if(chars[i]==lowercaseArr[j]){
         return true
       }
+    }
+  }
+  return false
+}
+
+function badRatio(x){
+  for (let i = 0; i < x.length; i++) {
+    if(x.charAt(i)=="."||x.charAt(i)=="/"){
+      return true
     }
   }
   return false
